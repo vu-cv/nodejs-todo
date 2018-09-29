@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todos">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/xeditable.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="/assets/js/xeditable.js"></script>
+
+	<script type="text/javascript" src="/assets/js/main/script.js"></script>
+	<script type="text/javascript" src="/assets/js/main/ServiceTodo.js"></script>
+</head>
+<body ng-controller="todoController">
+	<div class="container">
+		
+		<div class="jumbotron text-center">
+			<h1>{{appName}} <span class="label label-info">{{todos.length}}</span></h1>
+		</div>
+		<div id="todo-list" class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="checkbox" ng-repeat="todo in todos">
+					<input  type="checkbox" class="" ng-model="todo.isDone" ng-change="updateTodo(todo)">
+					<a href ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible"><i class="fa fa-edit"></i></a>
+					<a href ng-click="deleteTodo(todo)"><i class="fa fa-remove"></i></a>
+					<!-- class done se duoc add khi to.isDone = true -->
+					<span ng-class="{done: todo.isDone}" editable-text="todo.text" e-form="textBtnForm" onaftersave="updateTodo(todo)">{{todo.text || 'empty'}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+			
+		<i class="fa fa-spinner fa-spin fa-2x" ng-show="loading"></i>
+		</div>
+		<div id="todo-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center" >
+				<form action="" method="POST" role="form" class="text-center">
+					<div class="form-group">
+						<input id="text" ng-focus="true" ng-model="formData.text" type="text" class="form-control text-center" id="" placeholder="Create todo here !">
+					</div>
+
+					<button ng-disabled="!formData.text" ng-click="createTodo()" type="button" class="btn btn-default btn-lg">Add</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+*{}
+html {
+	overflow-y: scroll;
+}
+#todo-form {
+	margin-top: 20px;
+}
+.done {
+	text-decoration: line-through;
+}
