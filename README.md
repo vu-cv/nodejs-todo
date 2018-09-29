@@ -1,3 +1,3 @@
-# nodejs-todo
-NodeJs + AngularJs
-Demo: https://chuvu-todos.herokuapp.com/
+# Nodejs Todo
+- NodeJs + AngularJs
+- Demo: https://chuvu-todos.herokuapp.com/
