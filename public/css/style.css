@@ -8,3 +8,13 @@ html {
 .done {
 	text-decoration: line-through;
 }
+
+#spin {
+	position: absolute;
+	margin: auto;
+	top: 50%;
+	/*transform: translateY(-50%);*/
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
