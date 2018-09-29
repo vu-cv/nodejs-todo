@@ -41,7 +41,8 @@
 		</div>
 		
 		<div id="todo-list" class="row">
-			<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-3"></div>
+			<div id="listtodo" class="col-sm-6">
 				<div class="checkbox" ng-repeat="todo in todos">
 					<input  type="checkbox" class="" ng-model="todo.isDone" ng-change="updateTodo(todo)">
 					<a href ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible"><i class="fa fa-edit"></i></a>
