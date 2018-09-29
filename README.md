@@ -1,2 +1,2 @@
 # nodejs-todo
-Todos list
+NodeJs + AngularJs
